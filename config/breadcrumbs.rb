@@ -7,6 +7,10 @@ crumb :student do |student|
   parent :students
 end
 
+crumb :students do
+  link t('navbar.students'), students_path
+end
+
 crumb :student_subjects do |student|
   link "#{student.first_name} #{student.last_name} #{t('shared.subjects')}", student_subjects_path(student)
   parent :students
