@@ -4,7 +4,11 @@ class StudentsController < ApplicationController
   expose(:students) { Student.all }
 
   def index
-    students
+    render :index
+  end
+
+  def new
+    student_subject_items
   end
 
   def create
