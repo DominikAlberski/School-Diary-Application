@@ -1,7 +1,11 @@
 class TeachersController < ApplicationController
-  expose(:teachers)
+  expose(:teachers) { Teacher.all }
   expose(:teacher, attributes: :teacher_params)
   expose(:teacher_subject_items) { teacher.subject_items }
+
+  def index
+    teachers
+  end
 
   def create
     if teacher.save
