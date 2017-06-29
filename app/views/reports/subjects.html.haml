@@ -1,6 +1,11 @@
 - breadcrumb :subjects
 .subjects
-  list of subjects:
-  - subject_items.each do |subject_item|
-    .subject-item 
-    = subject_item.decorate.title_with_assigned_teacher
+  %ul 
+    list of subjects:
+    - subject_items.each do |subject_item|
+      %li.subject-item 
+        = subject_item.decorate.title_with_assigned_teacher
+        %ul 
+          Students:
+          - subject_item.students.each do |student|
+            %li= student.decorate.full_name
