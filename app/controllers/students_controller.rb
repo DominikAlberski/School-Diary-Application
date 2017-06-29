@@ -7,10 +7,6 @@ class StudentsController < ApplicationController
     render :index
   end
 
-  def new
-    student_subject_items
-  end
-
   def create
     if student.save
       redirect_to student_path(student), notice: I18n.t('shared.created', resource: 'Student')
@@ -20,7 +16,7 @@ class StudentsController < ApplicationController
   end
 
   def update
-    if student.save
+    if student.update(student_params)
       redirect_to student_path(student), notice: I18n.t('shared.updated', resource: 'Student')
     else
       render :edit
@@ -30,5 +26,11 @@ class StudentsController < ApplicationController
   def destroy
     student.destroy
     redirect_to students_path, notice: I18n.t('shared.deleted', resource: 'Student')
+  end
+
+  private
+
+  def student_params
+    params.require(:student).permit(:first_name, :last_name, subject_item_ids: [])
   end
 end
