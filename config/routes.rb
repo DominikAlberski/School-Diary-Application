@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get :subjects
   end
   get 'reports/subjects', to: 'reports#subjects', as: 'report_subjects'
+  get 'reports/payments', to: 'reports#payments', as: 'report_payments'
   # GET :reports do
   #   get :subjects
   # end

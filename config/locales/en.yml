@@ -4,6 +4,7 @@ en:
     teachers: Teachers
     reports: Reports
     reports_subjects: Subjects
+    reports_payments: Payments
     logout: Logout
     signin: Sign in
     signup: Sign up
