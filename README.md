@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/DominikAlberski/School-Diary-Application.svg?branch=master)](https://travis-ci.org/DominikAlberski/School-Diary-Application)
 RoR Workshops
 ================
 
