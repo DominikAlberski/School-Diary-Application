@@ -2,7 +2,7 @@ puts "Seeds: start"
 TEACHER_TITLES = %w(Dr. Prof. TA)
 User.create!(email: 'admin@admin.com',password: 'adminadmin')
 
-30.times do
+3.times do
   Teacher.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -18,10 +18,11 @@ teachers = Teacher.all
   )
 end
 
-40.times do
+25.times do
   Student.create!(
     first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name
+    last_name: Faker::Name.last_name,
+    birth_date: Date.today - rand(365*19..365*30)
   )
 end
 
