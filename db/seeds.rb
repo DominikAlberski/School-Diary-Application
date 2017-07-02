@@ -1,12 +1,14 @@
-require 'faker'
 puts "Seeds: start"
 TEACHER_TITLES = %w(Dr. Prof. TA)
-# User.create!(email: 'admin@admin.com',password: 'adminadmin')
+first_name = %w(Brat Albert Don Al Mourin Dugon Grot Wrot Bumble Zumble Sam Frodo Gandalf Godryk Gromir)
+last_name = %w(Balony Felony Rapiki Momabe Zadrak Star Mort Wort Drumar Strider Writer Baggins Grey Gamgie)
+subjects_titles = %w(Math Pol Geo Bio His Fiz Chem Int Eng Smg)
+User.create!(email: 'admin@admin.com',password: 'adminadmin')
 
 3.times do
   Teacher.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+    first_name: first_name.sample,
+    last_name: last_name.sample,
     academic_title: TEACHER_TITLES.sample
   )
 end
@@ -14,15 +16,15 @@ end
 teachers = Teacher.all
 20.times do
   SubjectItem.create!(
-    title: Faker::Lorem.sentence,
+    title: subjects_titles.sample,
     teacher: teachers.sample
   )
 end
 
 25.times do
   Student.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+    first_name: first_name.sample,
+    last_name: last_name.sample,
     birth_date: Date.today - rand(365*19..365*30)
   )
 end
