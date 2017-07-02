@@ -1,0 +1,13 @@
+- payments.each do |payment|
+  %tr
+    %td= payment.student.first_name
+    %td= payment.student.last_name
+    %td= payment.payment_date.to_formatted_s(:short)
+    %td= payment.paid ? 'paid' : 'unpaid'
+    %td
+      = link_to edit_student_payment_path(payment.student, payment), { title: t('shared.edit') } do
+        %button.btn.btn-default
+          = fa_icon "edit"
+      = link_to student_payment_path(payment.student, payment), { method: :delete, data: { confirm: "Cofirm delete?" }, title: t('shared.delete') }do
+        %button.btn.btn-default
+          = fa_icon "times"
