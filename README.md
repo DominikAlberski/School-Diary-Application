@@ -1,4 +1,7 @@
 [![Build Status](https://travis-ci.org/DominikAlberski/School-Diary-Application.svg?branch=master)](https://travis-ci.org/DominikAlberski/School-Diary-Application)
+
+https://lit-beyond-88544.herokuapp.com/
+
 RoR Workshops
 ================
 
